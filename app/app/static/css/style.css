@@ -1,0 +1,48 @@
+.navbar {
+    background-color: black;
+    position: static;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+input {
+    margin-bottom: 20px;
+    min-width: 42vh;
+}
+
+textarea {
+    margin-bottom: 20px;
+    min-width: 42vh;
+}
+
+h2[name="news-list-empty"] {
+    position: absolute;
+    top: 50%;
+}
+
+p[role="news-summary"] {
+    margin-top: 24px;
+}
+
+a[role="pag"] {
+    color: lightgray;
+}
+
+.card {
+    background-color: rgb(20, 20, 20);
+    color: lightgray;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.nav-item {
+    margin-left: 5px; 
+    margin-right: 5px;
+}
