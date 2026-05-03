@@ -1,4 +1,21 @@
 from django import forms
+from .models import *
+from django.db import models
+from django.forms import ModelForm
+
+
+class UserCreationCustomForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'phone', 'email', 'password']
+
+
+class NewsCreationForm(ModelForm):
+    class Meta:
+        model = News
+        fields = ['title', 'summary', 'content']
+        labels = ['Название', 'Краткое описание', 'Текст']
+        field_classes = ['form-control' for _ in range(3)]
 
 
 class NewsForm(forms.Form):
