@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+        <h1 class="h2 mb-4">Добро пожаловать!</h1>
+        <div class="d-flex flex-column justify-content-center align-items-center my-5 text-start" style="min-height: 60vh;">
+              <form method="post">
+                  {% csrf_token %}
+                  {% for field in form %}
+                        {{ field.label }}
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="text-danger mt-1 small">{{ field.errors|striptags }}</div>
+                        {% endif %}
+                  {% endfor %}
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a href="{% url 'home' page_id=1 %}" class="btn btn-outline-light px-4">Отмена</a>
+                        <button type="submit" class="btn btn-success px-4 fw-semibold">Войти</button>
+                  </div>
+              </form>
+        </div>
+
+{% endblock %}

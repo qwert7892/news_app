@@ -3,11 +3,12 @@
 {% block title %}Успешно{% endblock %}
 
 {% block content %}
-    <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 60vh;">
+<div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 60vh;"
+     xmlns="http://www.w3.org/1999/html">
         <div class="text-start my-5">
             <h2 class="">{{ news.title }}</h2>
             <div class="text-end fst-italic mb-5">
-                {{ news.date }}
+                {{ news.date_created }}
             </div>
             <div class="card mb-3">
                 {{ news.summary }}
@@ -16,5 +17,11 @@
                 {{ news.content }}
             </div>
         </div>
+        {% if edit_rights %}
+        <div class="d-flex justify-content-end gap-2" style="width: 100%;">
+            <a class="btn btn-outline-success" href="{% url 'edit_news' news_id=news.pk %}">Редактировать</a>
+            <a class="btn btn-outline-danger" href="{% url 'delete_news' news_id=news.pk %}">Удалить</a>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}

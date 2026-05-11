@@ -46,3 +46,7 @@ a[role="pag"] {
     margin-left: 5px; 
     margin-right: 5px;
 }
+
+.news-card :hover {
+    transform: scale(1.1) !important;
+}

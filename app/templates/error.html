@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h1>Лента Новостей</h1>
+    <p>Уникальные выдуманные новости</p>
+
+        <div class="d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 60vh;">
+            <h2 class="display-1 mb-3">{% error_code %}</h2>
+            <h2 class="mb-2">{% error_message %}</h2>
+        </div>
+
+{% endblock %}
